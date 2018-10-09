@@ -31,7 +31,7 @@
     <el-button type="primary" style='width: 100%;' @click='formatData' v-show="isShow">一键生成短期课程规划</el-button>
     <div class="img-box" v-show="isImageShow">
       <div class="top">
-        <img src="/assets/top.png" alt="">
+        <img src="https://51nbimg.u51.com/c98f11aaf5f1428b94a036a54dd29159.png" alt="">
         <div class="user-info">
           <p>姓名：{{formLabelAlign.name}}</p>
           <p>年龄：{{formLabelAlign.age}}</p>
@@ -59,7 +59,7 @@
         </div>
       </div>
       <div class="bottom">
-        <img src="/assets/bottom.png" alt="">
+        <img src="https://51nbimg.u51.com/75d1047f57e74e7b85a3cfefbd5a96d5.png" alt="">
       </div>
     </div>
   </div>
