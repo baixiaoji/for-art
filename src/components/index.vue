@@ -156,14 +156,19 @@ img{
   margin: 0;
   width: 100%;
 }
+.bottom{
+  margin-top: -1px;
+}
 .between{
   width: 100%;
-  background: #ff2d0a;
-  margin: -6px auto 0 auto;
+  background-image: url(../assets/between.png);
+  background-size: 100%;
+  margin: -7px auto 0 auto;
+  background-repeat-y: repeat;
+  background-position-y: center;
 }
 .table-box{
-  width: calc(100% - 20px);
-  border-radius: 6px;
+  width: 90%;
   background: #fff;
   margin: auto;
   box-sizing: border-box;
