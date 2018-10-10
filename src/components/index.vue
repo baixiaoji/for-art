@@ -31,7 +31,7 @@
     <el-button type="primary" style='width: 100%;' @click='formatData' v-show="isShow">一键生成短期课程规划</el-button>
     <div class="img-box" v-show="isImageShow">
       <div class="top">
-        <img src="https://51nbimg.u51.com/75d1047f57e74e7b85a3cfefbd5a96d5.png" alt="">
+        <img src="https://51nbimg.u51.com/85d10802a5dd4cde9ddfbd975b149fe2.png" alt="">
         <div class="user-info">
           <p>姓名：{{formLabelAlign.name}}</p>
           <p>年龄：{{formLabelAlign.age}}</p>
@@ -59,7 +59,7 @@
         </div>
       </div>
       <div class="bottom">
-        <img src="https://51nbimg.u51.com/c98f11aaf5f1428b94a036a54dd29159.png" alt="">
+        <img src="https://51nbimg.u51.com/08189e84ad0844e9809fda87c16c644f.png" alt="">
       </div>
     </div>
   </div>
@@ -161,7 +161,7 @@ img{
 }
 .between{
   width: 100%;
-  background-image: url(../assets/between.png);
+  background-image: url(https://51nbimg.u51.com/030da91db8104c31aeac0349aa3e0d0e.png);
   background-size: 100%;
   margin: -7px auto 0 auto;
   background-repeat-y: repeat;
