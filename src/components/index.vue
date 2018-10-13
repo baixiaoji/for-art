@@ -161,7 +161,7 @@ img{
 }
 .between{
   width: 100%;
-  background-image: url(https://51nbimg.u51.com/030da91db8104c31aeac0349aa3e0d0e.png);
+  background-image: url(https://51nbimg.u51.com/5954d2822cb749baa08b4d0f45e98b44.png);
   background-size: 100%;
   margin: -7px auto 0 auto;
   background-repeat-y: repeat;
