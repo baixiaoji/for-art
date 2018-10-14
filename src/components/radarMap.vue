@@ -110,7 +110,8 @@
 							radius: 40,
 							center: ['50%','50%'],
 							name: {
-								fontSize: 10
+								fontSize: 10,
+								color: '#333'
 							},
 							nameGap: 7
 						},
