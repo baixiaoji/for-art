@@ -63,39 +63,40 @@
 	</div>
 </template>
 <script>
-import html2canvas from 'html2canvas';
-export default {
-    data () {
-			return {
-				isShow: true,
-				isImgShow: true,
-				formLabelAlign: {
-					name: '',
-					age: '',
-					score: '',
-					comment: ''
-				},
-				score: {
-					create: null,
-					modelling: null,
-					color: null,
-					composition: null,
-					learn: null
-				}
-			}
-		},
-		methods: {
-			formatData () {
-				console.log(this.score);
-				// 基于准备好的dom，初始化echarts实例
+  import html2canvas from 'html2canvas';
+  
+  export default {
+    data() {
+      return {
+        isShow: true,
+        isImgShow: true,
+        formLabelAlign: {
+          name: '',
+          age: '',
+          score: '',
+          comment: '',
+        },
+        score: {
+          create: null,
+          modelling: null,
+          color: null,
+          composition: null,
+          learn: null,
+        },
+      };
+    },
+    methods: {
+      formatData() {
+        console.log(this.score);
+        // 基于准备好的dom，初始化echarts实例
         let myChart = this.$echarts.init(document.getElementById('myChart'));
-				// 绘制图表
-				let scoreArray = [];
-				scoreArray.push(this.score.create);
-				scoreArray.push(this.score.modelling);
-				scoreArray.push(this.score.color);
-				scoreArray.push(this.score.composition);
-				scoreArray.push(this.score.learn);
+        // 绘制图表
+        let scoreArray = [];
+        scoreArray.push(this.score.create);
+        scoreArray.push(this.score.modelling);
+        scoreArray.push(this.score.color);
+        scoreArray.push(this.score.composition);
+        scoreArray.push(this.score.learn);
         myChart.setOption({
 					radar: [
 						{
@@ -153,23 +154,23 @@ export default {
 				this.$nextTick(() => {
           let box = document.querySelector('.img-box');
           let wrapper = document.querySelector('.wrapper');
-          let _this = this
+          let _this = this;
           html2canvas(box, {
             useCORS: true,
           }).then((canvas) => {
             let image = new Image();
-            image.src = canvas.toDataURL("image/png");
+            image.src = canvas.toDataURL('image/png');
             image.classList.add('six-class');
-						wrapper.appendChild(image);
-						this.isShow = false;
-						this.isImgShow = false;
-            console.log(image)
+            wrapper.appendChild(image);
+            this.isShow = false;
+            this.isImgShow = false;
+            console.log(image);
             return image;
           });
-        })
-			}
-		}
-}
+        });
+      },
+    },
+  };
 </script>
 <style>
 .wrapper{
