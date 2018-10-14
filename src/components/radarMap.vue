@@ -41,24 +41,24 @@
 			<el-button type="primary" style='width: 100%; background: #39a6ba; color: #fff; margin-top:20px;' @click='formatData'>一键生成测评证书</el-button>
 		</div>
 		<div class="img-box" v-show="isImgShow">
-			<img style="width:100%" src="../assets/bg.png" alt="">
+			<img style="width:100%" src="https://51nbimg.u51.com/c20fe28eda5f4d4ab673e4c926df8382.png" alt="">
 			<div class="info-box">
-					<img class="logo" src="../assets/logo.png" alt="">
+					<img class="logo" src="https://51nbimg.u51.com/1bf91478602a4f17816423c3832d9a27.png" alt="">
 					<div class="title">测评证书</div>
 					<div class="user-info">
 						<div class="name">{{formLabelAlign.name}}</div>
-						<div class="age">{{formLabelAlign.age}}岁</div>
-						<div class="score">{{formLabelAlign.score}}分</div>
+						<div class="age">{{formLabelAlign.age?formLabelAlign.age+'岁':''}}</div>
+						<div class="score">{{formLabelAlign.score?formLabelAlign.score+'分':''}}</div>
 					</div>
-					<div class="map" id="myChart" :style="{width: '100%', height: '105px'}">
+					<div class="map" id="myChart" :style="{width: '100%', height: '120px'}">
 
 					</div>
 					<div class="comment-box">
 						{{formLabelAlign.comment}}
 					</div>
 			</div>
-			<img class="gaizhang" src="../assets/gaizhang.png" alt="">
-			<img class="code" src="../assets/code.png" alt="">
+			<img class="gaizhang" src="https://51nbimg.u51.com/7cd6f76d022b4c50976c1ac4b7b34658.png" alt="">
+			<img class="code" src="https://51nbimg.u51.com/eae6a6180dab4c279caf23abba2a5f2b.png" alt="">
 		</div>
 	</div>
 </template>
@@ -106,34 +106,48 @@ export default {
 								{text: '构图能力', max: 5},
 								{text: '学习兴趣', max: 5}
 							],
-							radius: 35,
-							center: ['50%','60%'],
+							radius: 40,
+							center: ['50%','50%'],
 							name: {
-								fontSize: 12
+								fontSize: 10
 							},
-							nameGap: 5
+							nameGap: 7
 						},
 					],
 					series: [
-							{
-								type: 'radar',
-								tooltip: {
-									trigger: 'item'
-								},
-								itemStyle: {normal: {areaStyle: {type: 'default'}}},
-								data: [
-									{
-										value: scoreArray,
-										name: '测试'
-									}
-								],
-								label: {
-									normal: {
-										show: true
-									}
-								},
-								animation: false
+						{
+							type: 'radar',
+							tooltip: {
+								trigger: 'item'
+							},
+							itemStyle: {normal: {areaStyle: {type: 'default'}}},
+							data: [
+								{
+									value: scoreArray,
+									name: '测试'
+								}
+							],
+							label: {
+								normal: {
+									show: true,
+									fontSize: 9,
+									distance: 1,
+									position: 'inside'
+								}
+							},
+							animation: false,
+							areaStyle: {
+								normal: {
+									color: '#cbdde6'
+								}
+							},
+							lineStyle: {
+								color: '#93b9cc'
+							},
+							itemStyle: {
+								color: '#90b7ca'
 							}
+						}
 					]
 				});
 				this.$nextTick(() => {
@@ -158,6 +172,9 @@ export default {
 }
 </script>
 <style>
+.wrapper{
+	font-family: MicrosoftYaHei Bold;
+}
 .six-class {
   width: 100%;
 }
@@ -187,15 +204,17 @@ export default {
 }
 .logo{
 	width: 21%;
-	margin-top: 34%;
+	margin-top: 30%;
 }
 .title{
 	font-size: 42px;
+	line-height: 42px;
 	font-weight: bold;
 }
 .user-info{
 	position: relative;
 	display: flex;
+	margin-top: 6px;
 }
 .name,.age,.score{
 	flex: 1;
@@ -204,20 +223,23 @@ export default {
 .comment-box{
 	width: 85%;
 	margin:auto;
-	font-size: 12px;
+	font-size: 11px;
 	text-align: left;
-	font-weight: bold;
+	line-height: 12px;
 }
 .gaizhang{
 	position: absolute;
 	left: 21%;
-	bottom: 20%;
+	bottom: 16%;
 	width: 10%;
 }
 .code{
 	position: absolute;
 	right: 18%;
-	bottom: 19%;
+	bottom: 15%;
 	width: 16%;
+}
+.map{
+	margin-top: 1%;
 }
 </style>
