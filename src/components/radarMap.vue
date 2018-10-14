@@ -1,5 +1,5 @@
 <template>
-	<div class="wrapper">
+	<div class="wrapper rader">
 		<div style="width:100%;" v-show="isShow">
 			<h3>测评证书生成</h3>
 			<el-form label-position="top" label-width="80px" :model="formLabelAlign">
@@ -172,7 +172,7 @@
     },
   };
 </script>
-<style>
+<style scoped>
 .wrapper{
 	font-family: MicrosoftYaHei Bold;
 }
@@ -195,7 +195,7 @@
 .img-box{
 	position: relative;
 }
-.info-box{
+.rader .info-box{
 	position: absolute;
 	text-align: center;
 	top: 0;
