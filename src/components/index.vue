@@ -126,7 +126,7 @@
   };
 </script>
 
-<style scoped>
+<style>
 .wrapper {
   width: 100%;
 }

@@ -172,11 +172,11 @@
     },
   };
 </script>
-<style scoped>
+<style>
 .wrapper{
 	font-family: MicrosoftYaHei Bold;
 }
-.six-class {
+.six-class{
   width: 100%;
 }
 .demonstration{
