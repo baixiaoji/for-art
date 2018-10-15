@@ -13,7 +13,7 @@
 					<el-input v-model="formLabelAlign.score" placeholder='请输入学生课程分数'></el-input>
 				</el-form-item>
 				<el-form-item>
-					<el-input v-model="formLabelAlign.comment" type="textarea" max="300" min=“200” placeholder='请输入评语（文字仅限200-300）' ></el-input>
+					<el-input v-model="formLabelAlign.comment" type="textarea" max="300" min=“200” placeholder='请输入评语（文字仅限200-250）' ></el-input>
 				</el-form-item>
 			</el-form>
 			<div class="star-wrapper">
@@ -232,13 +232,13 @@
 .gaizhang{
 	position: absolute;
 	left: 21%;
-	bottom: 12%;
+	bottom: 10%;
 	width: 10%;
 }
 .code{
 	position: absolute;
 	right: 18%;
-	bottom: 11%;
+	bottom: 9%;
 	width: 16%;
 }
 .map{
