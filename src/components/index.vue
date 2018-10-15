@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper project">
     <el-form label-position="top" label-width="80px" :model="formLabelAlign" v-show="isShow">
       <el-form-item>
         <el-input v-model="formLabelAlign.name" placeholder='请填写学生姓名'></el-input>
@@ -139,7 +139,7 @@ img{
 .top{
   position: relative;
 }
-.user-info{
+.project .user-info{
   position: absolute;
   left: 34px;
   bottom: 6%;
