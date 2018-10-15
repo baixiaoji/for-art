@@ -206,7 +206,7 @@
 }
 .logo{
 	width: 21%;
-	margin-top: 30%;
+	margin-top: 18%;
 }
 .title{
 	font-size: 42px;
@@ -232,13 +232,13 @@
 .gaizhang{
 	position: absolute;
 	left: 21%;
-	bottom: 16%;
+	bottom: 12%;
 	width: 10%;
 }
 .code{
 	position: absolute;
 	right: 18%;
-	bottom: 15%;
+	bottom: 11%;
 	width: 16%;
 }
 .map{
