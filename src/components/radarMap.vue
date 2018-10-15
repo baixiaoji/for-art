@@ -213,7 +213,7 @@
 	line-height: 42px;
 	font-weight: bold;
 }
-.user-info{
+.rader .user-info{
 	position: relative;
 	display: flex;
 	margin-top: 6px;
