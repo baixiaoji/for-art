@@ -41,7 +41,7 @@
 			<el-button type="primary" style='width: 100%; background: #39a6ba; color: #fff; margin-top:20px;' @click='formatData'>一键生成测评证书</el-button>
 		</div>
 		<div class="img-box" v-show="isImgShow">
-			<img style="width:100%" src="https://51nbimg.u51.com/c20fe28eda5f4d4ab673e4c926df8382.png" alt="">
+			<img style="width:100%" src="https://51nbimg.u51.com/2f45f7eff9464f1ca90a6cafe682c23a.jpeg" alt="">
 			<div class="info-box">
 					<img class="logo" src="https://51nbimg.u51.com/1bf91478602a4f17816423c3832d9a27.png" alt="">
 					<div class="title">测评证书</div>
