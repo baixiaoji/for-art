@@ -13,7 +13,7 @@
 					<el-input v-model="formLabelAlign.score" placeholder='请输入学生课程分数'></el-input>
 				</el-form-item>
 				<el-form-item>
-					<el-input v-model="formLabelAlign.comment" type="textarea" max="300" min=“200” placeholder='请输入评语（文字仅限200-300）' ></el-input>
+					<el-input v-model="formLabelAlign.comment" type="textarea" max="250" min=“200” placeholder='请输入评语（文字仅限200-250）' ></el-input>
 				</el-form-item>
 			</el-form>
 			<div class="star-wrapper">
@@ -41,7 +41,7 @@
 			<el-button type="primary" style='width: 100%; background: #39a6ba; color: #fff; margin-top:20px;' @click='formatData'>一键生成测评证书</el-button>
 		</div>
 		<div class="img-box" v-show="isImgShow">
-			<img style="width:100%" src="https://51nbimg.u51.com/c20fe28eda5f4d4ab673e4c926df8382.png" alt="">
+			<img style="width:100%" src="https://51nbimg.u51.com/2f45f7eff9464f1ca90a6cafe682c23a.jpeg" alt="">
 			<div class="info-box">
 					<img class="logo" src="https://51nbimg.u51.com/1bf91478602a4f17816423c3832d9a27.png" alt="">
 					<div class="title">测评证书</div>
@@ -232,13 +232,13 @@
 .gaizhang{
 	position: absolute;
 	left: 21%;
-	bottom: 12%;
+	bottom: 10%;
 	width: 10%;
 }
 .code{
 	position: absolute;
 	right: 18%;
-	bottom: 11%;
+	bottom: 9%;
 	width: 16%;
 }
 .map{
