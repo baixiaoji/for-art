@@ -13,7 +13,7 @@
 					<el-input v-model="formLabelAlign.score" placeholder='请输入学生课程分数'></el-input>
 				</el-form-item>
 				<el-form-item>
-					<el-input v-model="formLabelAlign.comment" type="textarea" max="300" min=“200” placeholder='请输入评语（文字仅限200-250）' ></el-input>
+					<el-input v-model="formLabelAlign.comment" type="textarea" max="250" min=“200” placeholder='请输入评语（文字仅限200-250）' ></el-input>
 				</el-form-item>
 			</el-form>
 			<div class="star-wrapper">
@@ -60,6 +60,8 @@
 			<img class="gaizhang" src="https://51nbimg.u51.com/7cd6f76d022b4c50976c1ac4b7b34658.png" alt="">
 			<img class="code" src="https://51nbimg.u51.com/eae6a6180dab4c279caf23abba2a5f2b.png" alt="">
 		</div>
+		<div class="img-wrapper" v-show="showImg"></div>
+		<el-button type="primary" style='width: 100%; margin: 10px 0' @click="revise" v-show="showImg">修改评价</el-button>
 	</div>
 </template>
 <script>
@@ -69,7 +71,8 @@
     data() {
       return {
         isShow: true,
-        isImgShow: true,
+				isImgShow: true,
+				showImg: false,
         formLabelAlign: {
           name: '',
           age: '',
@@ -154,22 +157,29 @@
 				});
 				this.$nextTick(() => {
           let box = document.querySelector('.img-box');
-          let wrapper = document.querySelector('.wrapper');
+          let wrapper = document.querySelector('.img-wrapper');
           let _this = this;
           html2canvas(box, {
             useCORS: true,
           }).then((canvas) => {
             let image = new Image();
             image.src = canvas.toDataURL('image/png');
-            image.classList.add('six-class');
+						image.classList.add('six-class');
+						wrapper.innerHTML = '';
             wrapper.appendChild(image);
             this.isShow = false;
-            this.isImgShow = false;
+						this.isImgShow = false;
+						this.showImg = true;
             console.log(image);
             return image;
           });
         });
-      },
+			},
+			revise() {
+				this.isShow= true;
+				this.isImgShow = true;
+				this.showImg = false;
+			},
     },
   };
 </script>

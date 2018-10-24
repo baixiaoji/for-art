@@ -7,27 +7,15 @@
       <el-form-item>
         <el-input v-model="formLabelAlign.age" placeholder='请填写学生年龄'></el-input>
       </el-form-item>
-      <el-form-item label="第一课时">
-        <el-input v-model="formLabelAlign.array[0].title" type="textarea" placeholder='请输入课程名称'></el-input>
+      <el-form-item v-for="(item, index) in formLabelAlign.array" :key="index" :label="'第'+toChinesNum(index+1)+'课时'">
+        <el-input v-model="item.title" type="textarea" placeholder='请输入课程名称'></el-input>
         <div style='height: 10px;'></div>
-        <el-input v-model="formLabelAlign.array[0].detail" type="textarea" placeholder='请输入课程知识点'></el-input>
-      </el-form-item>
-      <el-form-item label="第二课时">
-        <el-input v-model="formLabelAlign.array[1].title" type="textarea" placeholder='请输入课程名称'></el-input>
-        <div style='height: 10px;'></div>
-        <el-input v-model="formLabelAlign.array[1].detail" type="textarea" placeholder='请输入课程知识点'></el-input>
-      </el-form-item>
-      <el-form-item label="第三课时">
-        <el-input v-model="formLabelAlign.array[2].title" type="textarea" placeholder='请输入课程名称'></el-input>
-        <div style='height: 10px;'></div>
-        <el-input v-model="formLabelAlign.array[2].detail" type="textarea" placeholder='请输入课程知识点'></el-input>
-      </el-form-item>
-      <el-form-item label="第四课时">
-        <el-input v-model="formLabelAlign.array[3].title" type="textarea" placeholder='请输入课程名称'></el-input>
-        <div style='height: 10px;'></div>
-        <el-input v-model="formLabelAlign.array[3].detail" type="textarea" placeholder='请输入课程知识点'></el-input>
+        <el-input v-model="item.detail" type="textarea" placeholder='请输入课程知识点'></el-input>
       </el-form-item>
     </el-form>
+    <div>
+      <el-button type="primary" style='width: 100%; margin: 10px 0' @click="addClass" v-show="isShow">添加课时</el-button>
+    </div>
     <el-button type="primary" style='width: 100%;' @click='formatData' v-show="isShow">一键生成短期课程规划</el-button>
     <div class="img-box" v-show="isImageShow">
       <div class="top">
@@ -62,6 +50,10 @@
         <img src="https://51nbimg.u51.com/08189e84ad0844e9809fda87c16c644f.png" alt="">
       </div>
     </div>
+		<div class="img-wrapper" v-show="showImg">
+
+		</div>
+		<el-button type="primary" style='width: 100%; margin: 10px 0' @click="revise" v-show="showImg">修改课时</el-button>
   </div>
 </template>
 
@@ -72,7 +64,8 @@
     data() {
       return {
         isShow: true,
-        isImageShow: false,
+				isImageShow: false,
+				showImg: false,
         formLabelAlign: {
           name: '',
           age: '',
@@ -96,7 +89,7 @@
         const chinese = ['一', '二', '三', '四'];
         const tableData = this.formLabelAlign.array.map((item, index) => {
           return {
-            time: `第${chinese[index]}课时`,
+            time: `第${this.toChinesNum(index+1)}课时`,
             title: item.title,
             detail: item.detail,
           }
@@ -104,10 +97,11 @@
         this.tableData = tableData;
         console.log(this.tableData);
         this.isShow = false;
-        this.isImageShow = true;
+				this.isImageShow = true;
+				this.showImg = true;
         this.$nextTick(() => {
           let box = document.querySelector('.img-box');
-          let wrapper = document.querySelector('.wrapper');
+          let wrapper = document.querySelector('.img-wrapper');
           let _this = this
           html2canvas(box, {
             useCORS: true,
@@ -115,13 +109,39 @@
             let image = new Image();
             image.src = canvas.toDataURL("image/png");
             image.classList.add('six-class');
-            _this.isImageShow = false;
+						_this.isImageShow = false;
+						wrapper.innerHTML = '';
             wrapper.appendChild(image);
             console.log(image)
             return image;
           });
         })
       },
+      addClass() {
+				let oForm = {title: '', detail: ''}
+				this.formLabelAlign.array.push(oForm)
+			},
+			revise() {
+				this.isShow= true;
+				this.showImg = false;
+			},
+			toChinesNum (num) {
+				let changeNum = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
+				let unit = ["", "十", "百", "千", "万"];
+				num = parseInt(num);
+				let getWan = (temp) => {
+					let strArr = temp.toString().split("").reverse();
+					let newNum = "";
+					for (var i = 0; i < strArr.length; i++) {
+						newNum = (i == 0 && strArr[i] == 0 ? "" : (i > 0 && strArr[i] == 0 && strArr[i - 1] == 0 ? "" : changeNum[strArr[i]] + (strArr[i] == 0 ? unit[0] : unit[i]))) + newNum;
+					}
+					return newNum;
+				}
+				let overWan = Math.floor(num / 10000);
+				let noWan = num % 10000;
+				if (noWan.toString().length < 4) noWan = "0" + noWan;
+				return overWan ? getWan(overWan) + "万" + getWan(noWan) : getWan(num);
+			}
     },
   };
 </script>
