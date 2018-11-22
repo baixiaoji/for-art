@@ -7,15 +7,15 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/',
-      name: 'index',
-      component: Index
-    },
-    {
-      path: '/radarMap',
-      name: 'radarMap',
-      component: radarMap
-    }
+    // {
+    //   path: '/',
+    //   name: 'index',
+    //   component: Index
+    // },
+    // {
+    //   path: '/radarMap',
+    //   name: 'radarMap',
+    //   component: radarMap
+    // }
   ]
 })
