@@ -9,14 +9,14 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/xiang/',
       name: 'index',
-      component: HelloWorld
+      component: Index
     },
     {
-      path: '/radarMap',
+      path: '/xiang/radarMap',
       name: 'radarMap',
-      component: HelloWorld
+      component: radarMap
     }
   ]
 })
