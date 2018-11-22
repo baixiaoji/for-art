@@ -9,6 +9,11 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '/',
+      name: 'index',
+      component: HelloWorld
+    },
+    {
       path: '/xiang/',
       name: 'index',
       component: Index
